@@ -12,17 +12,28 @@ head(data)
 
 summary(data)
 
+# Filtrer les données pour l'année 2023 et les stocker dans une variable
+data_2023 <- data %>%
+  filter(date == 2023)
+
+plot_data <- data %>%
+  group_by(date) %>%
+  summarise(review = n())
+
+ggplot(plot_data, aes(x = as.factor(date), y = review)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(title = "Nombre d'avis par année",
+       x = "Année",
+       y = "Nombre d'avis") +
+  theme_minimal()
+
+
+
+
+
+
 #Conserver les données uniquement de 2020,2021,2022 et 2023
 donnees_filtrees <- data[data$date %in% c(2020, 2021, 2022, 2023), ]
 
-#"Avis" est de type numérique
-donnees_filtrees$review <- as.numeric(donnees_filtrees$review)
-
-# Compter le nombre d'avis pour chaque année
-nombre_avis_par_annee <- donnees_filtrees %>%
-  group_by(date) %>%
-  count()
-
-# Affichage de la moyenne globale du nombre d'avis
-print(nombre_avis_par_annee)
-
+nombre_lignes_2023 <- nrow(donnees_filtrees[donnees_filtrees$date == 2023, , drop = FALSE])
+nombre_lignes_2023 <- as.character(nombre_lignes_2023)

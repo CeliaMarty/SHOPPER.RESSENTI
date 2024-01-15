@@ -48,13 +48,9 @@ ui <- navbarPage(
                      h3("Quelques chiffres"), # Titre colonne
                      br(),
                      br(),
-                     valueBoxOutput("maBox1"), # Boites de valeur 
-                     valueBoxOutput("maBox2"),
-                     valueBoxOutput("maBox3"),
-                     h3("Une vision générale"), # Titre colonne
-                     br(),
-                     br(),
-                     plotOutput("ReviewPlot") # Plot du nombre de review par an
+                     valueBoxOutput("maBox1"), # Boites de valeur
+                     h3("Une vision générale"),
+                     plotOutput("PlotReview")
                    )
                  )
                )
@@ -77,18 +73,25 @@ ui <- navbarPage(
 
 # Définition du serveur Shiny
 server <- function(input, output) {
-  # Mises APERCU DES DONNÉES :  
-  # Mettre à jour la valeur de la boîte pour le nombre d'avis en 2023
+
   output$maBox1 <- renderValueBox({
-    valueBox(
-      value = 26155, "Nombre d'avis en 2023",
-      icon = icon("calendar"))
+    valueBox(nrow(data_2023), "Nombre de délits total en 2023",
+             icon = icon("calendar"))
   })
   
   # Ajoutez ici le code pour maBox2 et maBox3
   
   # Afficher le bar plot sur le menu home 
-  # Ajoutez ici le code pour ReviewPlot
+  output$PlotReview <- renderPlot({
+    ggplot(plot_data, aes(x = as.factor(date), y = review)) +
+      geom_bar(stat = "identity", fill = "steelblue") +
+      labs(title = "Nombre d'avis par année",
+           x = "Année",
+           y = "Nombre d'avis") +
+      theme_minimal()
+  })
+  
+# Ajoutez ici le code pour ReviewPlot
   
   # Afficher la carte en fonction de l'area sélectionnée
   output$map <- renderLeaflet({
