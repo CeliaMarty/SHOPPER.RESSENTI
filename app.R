@@ -1,9 +1,9 @@
-#Inclusions des scripts R :
+# Inclusions des scripts R :
 
 source(file= "/Users/celiamarty/Desktop/SHOPPER.RESSENTI/Global.R")
 source(file= "/Users/celiamarty/Desktop/SHOPPER.RESSENTI/Packages.R")
 
-#Interface utilisateur    
+# Interface utilisateur
 ui <- navbarPage(
   title = "SHOPPER.RESSENTI", # Titre de la page
   tabsetPanel(
@@ -11,82 +11,86 @@ ui <- navbarPage(
     tabPanel("Accueil",
              fluidPage(
                themeSelector(),
-               # Colonne 1
-               column (4,
-                       br(),
-                       br(),
-                       br(),
-                       br(),
-                       br(),
-                       br(),
-                       fileInput("fileInput","Selectionner un fichier", multiple = FALSE, accept = NULL)
-               ),
-               # Colonne2
-               column (4,
-                       h3("Quelques chiffres"), #Titre colonne
-                       br(),
-                       br(),
-                       valueBoxOutput("maBox1"), #Boites de valeur 
-                       valueBoxOutput("maBox2"),
-                       valueBoxOutput("maBox3")
-               ),
-               # Colonne 3
-               column (4,
-                       h3("Une vision générale"), # Titre colonne
-                       br(),
-                       br(),
-                       plotOutput("ReviewPlot") # Plot du nombre de review par an
+               sidebarLayout(
+                 sidebarPanel(
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   fileInput("fileInput", "Sélectionner un fichier", multiple = FALSE, accept = NULL),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                   br(),
+                 ),
+                 mainPanel(
+                   tabsetPanel(
+                     h3("Quelques chiffres"), # Titre colonne
+                     br(),
+                     br(),
+                     valueBoxOutput("maBox1"), # Boites de valeur 
+                     valueBoxOutput("maBox2"),
+                     valueBoxOutput("maBox3"),
+                     h3("Une vision générale"), # Titre colonne
+                     br(),
+                     br(),
+                     plotOutput("ReviewPlot") # Plot du nombre de review par an
+                   )
+                 )
                )
              )
     ),
     # Onglet Review
     tabPanel("Avis",
-             fluidPage(
-               # Colonne 1
-               column(12)
-             )
     ),
     # Onglet Temporalité
     tabPanel("Temporalité",
-             # Colonne 1
-             fluidPage(
-               column(6,
-                       )),
-               
-               # Colonne 2
-               column(6,
-               )
-             
     ),
     # Onglet Localisation
     tabPanel("Localisation",
              fluidPage(
                leafletOutput("map") # Carte Leaflet
-             ),
+             )
     )
   )
 )
-#Définition du server Shiny
+
+# Définition du serveur Shiny
 server <- function(input, output) {
-  
-  
-  #Mises APERCU DES DONNÉES :  
-  # Mettre à jour la valeur de la boîte pour le nombre de délits en 2023
+  # Mises APERCU DES DONNÉES :  
+  # Mettre à jour la valeur de la boîte pour le nombre d'avis en 2023
   output$maBox1 <- renderValueBox({
     valueBox(
       value = 26155, "Nombre d'avis en 2023",
-             icon = icon("calendar"))
+      icon = icon("calendar"))
   })
   
-  
-  #output$maBox2 <- renderValueBox({
-  
-  #output$maBox3 <- renderValueBox({
+  # Ajoutez ici le code pour maBox2 et maBox3
   
   # Afficher le bar plot sur le menu home 
-  #output$ReviewPlot <- renderPlot({
+  # Ajoutez ici le code pour ReviewPlot
   
-  #Afficher la carte en fonction de l'area sélectionnée
+  # Afficher la carte en fonction de l'area sélectionnée
   output$map <- renderLeaflet({
     leaflet(donnees_filtrees) %>%
       addTiles() %>%
@@ -96,18 +100,12 @@ server <- function(input, output) {
         clusterOptions = markerClusterOptions()
       )
   })
-  #output$map <- renderLeaflet({
-    #leaflet(donnees_filtrees) %>%
-      #addTiles() %>%
-      #addHeatmap(
-        #lat = ~latitude,
-        #lng = ~longitude
-      #)
-  #})
+  
   # Observer pour le changement de thème
   observe({
     shinythemes::themeSelector()
   })
 }
-#Lancer l'application Shiny
+
+# Lancer l'application Shiny
 shinyApp(ui = ui, server = server)
