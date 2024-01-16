@@ -1,7 +1,7 @@
 # Importe les données
 
 print("data charged")
-data <- read.csv("/Users/celiamarty/Desktop/SHOPPER.RESSENTI/DATA/TeePublic_review.csv", header = TRUE, sep = ";")
+#data <- read.csv("/Users/celiamarty/Desktop/SHOPPER.RESSENTI/DATA/TeePublic_review.csv", header = TRUE, sep = ";")
 print("data load")
 
 # Affichage des premières lignes du jeu de données
@@ -28,6 +28,9 @@ ggplot(plot_data, aes(x = as.factor(date), y = review)) +
   theme_minimal()
 
 
+num_rows <- nrow(data_2023)
+
+nombre_lignes_2023 <- nrow(data_2023)
 
 
 
