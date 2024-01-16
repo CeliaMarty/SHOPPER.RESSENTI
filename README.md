@@ -1,7 +1,7 @@
 # SHOPPER.RESSENTI
 
-## Introduction
-L'application SHOPPER.RESSENTI offre une expérience interactive pour explorer et comprendre les tendances de criminalité à Los Angeles, de 2020 à 2023.
+## Projet
+L'application SHOPPER.RESSENTI crée avec l'aide de [Khoudia DIOUF](https://github.com/KhoudiaDiouf/KhoudiaDiouf) permet à l'utilisateur d'explorer de manière intéractive un grands nombres d'avis clients rassemblés TeePublic, une plate-forme en ligne réputée pour sa collection diversifiée d'articles de mode. 
 
 Voici un aperçu de l'application : 
 
@@ -11,12 +11,10 @@ IMAGE
 ## Comment exécuter l'application
 
 - Avoir R et R studio sur votre machine
-- Télécharger l'ensemble du projet depuis le [Répository R-Shiny](https://github.com/CeliaMarty/Projet-R-Shiny-)
-- Télécharger le jeu de données via ce lien [Crime-Data](https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8/about_data)
-- Mettre le fichier dans un dossier DATA que vous créez
-- Ouvrir global.R, packages.R et Webapp_DataCrime.R
-- Modifier les chemins (1 sur global.R avec l'endroit où est placé le jeu de donées et 2 sur Webapp_DataCrime.R avec l'endroit où est placé le fichier packages et de même pour le fichier global)
-- Aller sur Webapp_DataCrime.R et appuyez sur Run App pour lancer l'application. 
+- Télécharger l'ensemble du projet depuis le [Répository SHOPPER.RESSENTI](https://github.com/CeliaMarty/SHOPPER.RESSENTI)
+- Télécharger le jeu de données via ce lien [ShopperSentiments](https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8/about_data)
+- Ouvrir global.R, packages.R et app.R
+- Lancer l'application puis insérer le jeu de données, vous pouvez maintenant explorer l'application ! 
   
 
 ## Fonctionnalités de l'Application
