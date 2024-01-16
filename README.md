@@ -12,7 +12,7 @@ IMAGE
 
 - Avoir R et R studio sur votre machine
 - Télécharger l'ensemble du projet depuis le [Répository SHOPPER.RESSENTI](https://github.com/CeliaMarty/SHOPPER.RESSENTI)
-- Télécharger le jeu de données via ce lien [ShopperSentiments](https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8/about_data)
+- Télécharger le jeu de données via ce lien [ShopperSentiments](https://www.kaggle.com/datasets/nelgiriyewithana/shoppersentiments/data)
 - Ouvrir global.R, packages.R et app.R
 - Lancer l'application puis insérer le jeu de données, vous pouvez maintenant explorer l'application ! 
   
