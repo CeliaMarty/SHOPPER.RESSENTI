@@ -3,9 +3,10 @@
 ## Projet
 L'application SHOPPER.RESSENTI crée avec l'aide de [Khoudia DIOUF](https://github.com/KhoudiaDiouf/KhoudiaDiouf) permet à l'utilisateur d'explorer de manière intéractive un grand nombre d'avis clients rassemblés TeePublic, une plate-forme en ligne réputée pour sa collection diversifiée d'articles de mode. 
 
-Voici un aperçu de l'application : 
+Voici un aperçu de l'application :
+<img width="1440" alt="Capture d’écran 2024-01-19 à 00 34 59" src="https://github.com/CeliaMarty/SHOPPER.RESSENTI/assets/152623002/cc79f7b1-1ca7-4502-8a1e-6db69032cd40">
 
-/Users/celiamarty/Desktop/Capture d’écran 2024-01-19 à 00.34.59.png
+
 
 
 
