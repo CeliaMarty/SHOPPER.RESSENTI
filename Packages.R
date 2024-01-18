@@ -1,6 +1,8 @@
 # Création d'applications web interactives 
 library(shiny)
-
+library(shinydashboard)
+library(shinythemes)
+library(magrittr)
 # Ensemble de packages pour travailler avec les données. 
 library(tidyverse)
 
