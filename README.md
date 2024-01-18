@@ -5,7 +5,7 @@ L'application SHOPPER.RESSENTI crée avec l'aide de [Khoudia DIOUF](https://gith
 
 Voici un aperçu de l'application : 
 
-<img width="572" alt="Capture d’écran 2024-01-19 à 00 31 49" src="https://github.com/CeliaMarty/SHOPPER.RESSENTI/assets/152623002/77bdda41-99fd-453a-b7e3-2e0b48430d6a">
+<img width="1440" alt="Capture d’écran 2024-01-19 à 00 31 15" src="https://github.com/CeliaMarty/SHOPPER.RESSENTI/assets/152623002/0659a955-940a-48ed-be87-fa7b5c6c07b5">
 
 
 
