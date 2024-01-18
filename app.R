@@ -40,8 +40,10 @@ ui <- navbarPage(
                    br(),
                    br(),
                    br(),
-                   br(),
-                   br(),
+downloadButton("exportPDF", "Export PDF"),
+downloadButton("exportPNG", "Export PNG"),
+actionButton("generateReport", "Générer le Rapport"),
+),
                  ),
                  mainPanel(
                      h3("Quelques chiffres"), # Titre colonne
@@ -72,7 +74,6 @@ ui <- navbarPage(
              )
     )
   )
-)
 # Définition du serveur Shiny
 server <- function(input, output) {
 
@@ -149,6 +150,8 @@ server <- function(input, output) {
         clusterOptions = markerClusterOptions()
       )
   })
+  
+  
   
   
   # Observer pour le changement de thème

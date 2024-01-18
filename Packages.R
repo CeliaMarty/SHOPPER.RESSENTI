@@ -22,3 +22,5 @@ library(DT)
 
 library(shinythemes)
 
+library(shinyjs)
+
