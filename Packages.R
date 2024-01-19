@@ -25,4 +25,5 @@ library(DT)
 library(shinythemes)
 
 library(shinyjs)
+library(shinyWidgets)
 
